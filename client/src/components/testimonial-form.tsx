@@ -24,7 +24,6 @@ export default function TestimonialForm() {
       location: "",
       rating: 5,
       message: "",
-      approved: false,
     },
   });
 

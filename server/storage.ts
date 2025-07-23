@@ -94,7 +94,7 @@ export class MemStorage implements IStorage {
     });
 
     // Seed testimonials
-    const seedTestimonials: InsertTestimonial[] = [
+    const seedTestimonials = [
       {
         name: "Arjun Reddy",
         profession: "Architect",
@@ -122,7 +122,15 @@ export class MemStorage implements IStorage {
     ];
 
     seedTestimonials.forEach(testimonial => {
-      this.createTestimonial(testimonial);
+      const { approved, ...testimonialData } = testimonial;
+      const createdTestimonial = this.createTestimonial(testimonialData);
+      if (approved && createdTestimonial) {
+        const id = this.currentTestimonialId - 1;
+        const existing = this.testimonials.get(id);
+        if (existing) {
+          this.testimonials.set(id, { ...existing, approved: true });
+        }
+      }
     });
   }
 
