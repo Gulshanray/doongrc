@@ -1,149 +1,186 @@
 import { useQuery } from "@tanstack/react-query";
-import ProductCard from "@/components/product-card";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import type { Product } from "@shared/schema";
 
 export default function Products() {
-  const [selectedCategory, setSelectedCategory] = useState<string>("all");
+  const [selectedCategory, setSelectedCategory] = useState<string>("GRC Jali");
 
   const { data: products = [], isLoading } = useQuery<Product[]>({
     queryKey: ["/api/products"],
   });
 
-  const categories = [
-    { id: "all", name: "All Products" },
-    { id: "GRC Column", name: "GRC Columns" },
-    { id: "GRC Jali", name: "GRC Jali" },
-    { id: "GRC Domes", name: "GRC Domes" },
+  const grcJaliProducts = [
+    {
+      id: 1,
+      name: "Rectangular GRC Jali",
+      price: "₹400.00",
+      unit: "Square Feet",
+      moq: "1000 Square Feet",
+      image: "https://images.unsplash.com/photo-1558618047-3c8c5d1c9a0e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=200",
+      businessType: "Manufacturer, Supplier",
+      material: "GRC",
+      shape: "Rectangular",
+      color: "White",
+      form: "Solid",
+      countryOfOrigin: "India",
+      application: "Home",
+      thickness: "25 mm"
+    },
+    {
+      id: 2,
+      name: "Round GRC Jali",
+      price: "₹500.00",
+      unit: "Square Feet",
+      moq: "1000 Square Feet",
+      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=200",
+      businessType: "Manufacturer, Supplier",
+      material: "GRC",
+      shape: "Round",
+      color: "Gray",
+      form: "Solid",
+      countryOfOrigin: "India",
+      application: "Home",
+      thickness: "25 mm"
+    },
+    {
+      id: 3,
+      name: "Square GRC Jali",
+      price: "₹450.00",
+      unit: "Square Feet",
+      moq: "1000 Square Feet",
+      image: "https://images.unsplash.com/photo-1600607687644-aac4c3eac7f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=200",
+      businessType: "Manufacturer, Supplier",
+      material: "GRC",
+      shape: "Square",
+      color: "White",
+      form: "Solid",
+      countryOfOrigin: "India",
+      application: "Home",
+      thickness: "25 mm"
+    },
+    {
+      id: 4,
+      name: "25 mm GRC Jali",
+      price: "₹500.00",
+      unit: "Square Feet",
+      moq: "1000 Square Feet",
+      image: "https://images.unsplash.com/photo-1558618047-3c8c5d1c9a0e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=200",
+      businessType: "Manufacturer, Supplier",
+      material: "GRC",
+      shape: "Rectangular",
+      color: "White",
+      form: "Solid",
+      countryOfOrigin: "India",
+      application: "Home",
+      thickness: "25 mm"
+    }
   ];
 
-  const filteredProducts = selectedCategory === "all" 
-    ? products 
-    : products.filter(product => product.category === selectedCategory);
-
   return (
-    <div>
-      {/* Products Header */}
-      <section className="bg-brand-red text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl lg:text-5xl font-bold mb-6">Our Products</h1>
-          <p className="text-xl text-red-100 max-w-3xl mx-auto">
-            Discover our complete range of premium GRC and GFRC architectural products
-          </p>
-        </div>
-      </section>
-
-      {/* Product Categories & Grid */}
-      <section className="py-16 bg-white">
+    <div className="min-h-screen bg-gray-50">
+      {/* Breadcrumb */}
+      <div className="bg-white py-4 border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Category Filter */}
-          <div className="flex flex-wrap justify-center gap-4 mb-12">
-            {categories.map((category) => (
-              <Button
-                key={category.id}
-                variant={selectedCategory === category.id ? "default" : "outline"}
-                className={`px-6 py-2 rounded-full ${
-                  selectedCategory === category.id
-                    ? "bg-brand-red text-white"
-                    : "border-brand-red text-brand-red hover:bg-brand-red hover:text-white"
-                }`}
-                onClick={() => setSelectedCategory(category.id)}
-              >
-                {category.name}
-              </Button>
-            ))}
-          </div>
-
-          {/* Products Grid */}
-          {isLoading ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-              {Array.from({ length: 8 }).map((_, i) => (
-                <div key={i} className="bg-gray-200 rounded-lg h-96 animate-pulse" />
-              ))}
-            </div>
-          ) : filteredProducts.length > 0 ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-              {filteredProducts.map((product) => (
-                <ProductCard key={product.id} product={product} />
-              ))}
-            </div>
-          ) : (
-            <div className="text-center py-12">
-              <p className="text-gray-600 text-lg">No products found in this category.</p>
-            </div>
-          )}
-        </div>
-      </section>
-
-      {/* Product Categories Info */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold brand-dark mb-4">Product Categories</h2>
-            <p className="text-lg text-gray-600">Explore our diverse range of architectural solutions</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <img
-                src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250"
-                alt="GRC Columns"
-                className="w-full h-48 object-cover rounded-lg mb-4"
-              />
-              <h3 className="text-xl font-semibold brand-dark mb-3">GRC Columns</h3>
-              <p className="text-gray-600 mb-4">
-                Premium architectural columns with exceptional durability and aesthetic appeal for luxury projects.
-              </p>
-              <Button 
-                variant="outline" 
-                className="border-brand-red text-brand-red hover:bg-brand-red hover:text-white"
-                onClick={() => setSelectedCategory("GRC Column")}
-              >
-                View Products
-              </Button>
-            </div>
-
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <img
-                src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250"
-                alt="GRC Jali"
-                className="w-full h-48 object-cover rounded-lg mb-4"
-              />
-              <h3 className="text-xl font-semibold brand-dark mb-3">GRC Jali</h3>
-              <p className="text-gray-600 mb-4">
-                Decorative jali patterns with natural lighting effects, perfect for creating elegant architectural screens.
-              </p>
-              <Button 
-                variant="outline" 
-                className="border-brand-red text-brand-red hover:bg-brand-red hover:text-white"
-                onClick={() => setSelectedCategory("GRC Jali")}
-              >
-                View Products
-              </Button>
-            </div>
-
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <img
-                src="https://pixabay.com/get/g598f26f58af03f79189e71999d9e43b835a9a90b5f7f12e7f8dfad23aa025f77dd14c6ef4fba503a82445b484f668211e95aad5858b4010431d641e8ff5f926b_1280.jpg"
-                alt="GRC Domes"
-                className="w-full h-48 object-cover rounded-lg mb-4"
-              />
-              <h3 className="text-xl font-semibold brand-dark mb-3">GRC Domes</h3>
-              <p className="text-gray-600 mb-4">
-                Traditional temple dome architecture combining spiritual aesthetics with modern construction techniques.
-              </p>
-              <Button 
-                variant="outline" 
-                className="border-brand-red text-brand-red hover:bg-brand-red hover:text-white"
-                onClick={() => setSelectedCategory("GRC Domes")}
-              >
-                View Products
-              </Button>
-            </div>
+          <div className="flex items-center space-x-2 text-sm text-gray-600">
+            <span>Home</span>
+            <span>»</span>
+            <span>Products</span>
+            <span>»</span>
+            <span className="font-medium text-gray-900">GRC Jali</span>
           </div>
         </div>
-      </section>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <h1 className="text-3xl font-bold text-gray-900 mb-8">GRC Jali</h1>
+        <p className="text-gray-600 mb-8">
+          Leading Manufacturer and Distributor of Rectangular GRC Jali, Round GRC Jali, Square GRC Jali and many more from Udaipur.
+        </p>
+
+        {/* Products List */}
+        <div className="space-y-6">
+          {grcJaliProducts.map((product) => (
+            <div key={product.id} className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+              <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
+                {/* Product Image */}
+                <div className="lg:col-span-1">
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="w-full h-48 object-cover rounded-lg"
+                  />
+                  <div className="mt-2 text-center">
+                    <span className="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded">Hover to zoom</span>
+                  </div>
+                </div>
+
+                {/* Product Details */}
+                <div className="lg:col-span-2">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">{product.name}</h3>
+                  <div className="flex items-center space-x-2 mb-4">
+                    <span className="text-2xl font-bold text-brand-red">{product.price}</span>
+                    <span className="text-gray-600">/ {product.unit}</span>
+                  </div>
+                  <p className="text-gray-700 mb-4">
+                    <span className="font-semibold">{product.moq}</span> <span className="text-gray-500">(MOQ)</span>
+                  </p>
+
+                  {/* Product Specifications Table */}
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm">
+                      <tbody className="space-y-2">
+                        <tr>
+                          <td className="py-2 px-3 text-gray-700 bg-gray-50 font-medium w-1/3">Business Type</td>
+                          <td className="py-2 px-3 text-gray-900">{product.businessType}</td>
+                        </tr>
+                        <tr>
+                          <td className="py-2 px-3 text-gray-700 bg-gray-50 font-medium">Material</td>
+                          <td className="py-2 px-3 text-gray-900">{product.material}</td>
+                        </tr>
+                        <tr>
+                          <td className="py-2 px-3 text-gray-700 bg-gray-50 font-medium">Shape</td>
+                          <td className="py-2 px-3 text-gray-900">{product.shape}</td>
+                        </tr>
+                        <tr>
+                          <td className="py-2 px-3 text-gray-700 bg-gray-50 font-medium">Color</td>
+                          <td className="py-2 px-3 text-gray-900">{product.color}</td>
+                        </tr>
+                        <tr>
+                          <td className="py-2 px-3 text-gray-700 bg-gray-50 font-medium">Form</td>
+                          <td className="py-2 px-3 text-gray-900">{product.form}</td>
+                        </tr>
+                        <tr>
+                          <td className="py-2 px-3 text-gray-700 bg-gray-50 font-medium">Country of Origin</td>
+                          <td className="py-2 px-3 text-gray-900">{product.countryOfOrigin}</td>
+                        </tr>
+                        <tr>
+                          <td className="py-2 px-3 text-gray-700 bg-gray-50 font-medium">Application</td>
+                          <td className="py-2 px-3 text-gray-900">{product.application}</td>
+                        </tr>
+                        <tr>
+                          <td className="py-2 px-3 text-gray-700 bg-gray-50 font-medium">Thickness</td>
+                          <td className="py-2 px-3 text-gray-900">{product.thickness}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                {/* Action Buttons */}
+                <div className="lg:col-span-1 flex flex-col space-y-3">
+                  <Button className="bg-red-600 text-white hover:bg-red-700 text-sm">
+                    Get Best Price
+                  </Button>
+                  <Button className="bg-red-600 text-white hover:bg-red-700 text-sm">
+                    ↗ Request to Call
+                  </Button>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
