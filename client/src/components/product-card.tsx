@@ -2,6 +2,7 @@ import { Star } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Link } from "wouter";
 import type { Product } from "@shared/schema";
 
 interface ProductCardProps {
@@ -41,9 +42,11 @@ export default function ProductCard({ product }: ProductCardProps) {
           </div>
           <span className="text-gray-600 text-sm ml-2">({product.rating}.0)</span>
         </div>
-        <Button className="w-full bg-brand-red text-white hover:bg-brand-red-light">
-          VIEW DETAILS →
-        </Button>
+        <Link href={`/products/${product.id}`}>
+          <Button className="w-full bg-brand-red text-white hover:bg-brand-red-light">
+            VIEW DETAILS →
+          </Button>
+        </Link>
       </CardContent>
     </Card>
   );
