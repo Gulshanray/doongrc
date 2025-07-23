@@ -1,156 +1,173 @@
-import ContactForm from "@/components/contact-form";
-import { MapPin, Phone, Mail, Clock, Headphones, Star } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { MapPin, Phone, Mail, Clock, MessageSquare } from "lucide-react";
 
 export default function Contact() {
   return (
-    <div>
+    <div className="min-h-screen bg-gray-50">
       {/* Contact Header */}
-      <section className="bg-brand-red text-white py-16">
+      <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl lg:text-5xl font-bold mb-6">Contact Us</h1>
-          <p className="text-xl text-red-100 max-w-3xl mx-auto">
-            Get in touch with our experts to discuss your architectural requirements
+          <h1 className="text-4xl lg:text-5xl font-bold mb-6 text-gray-900">Contact Us</h1>
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            Get in touch with us for any inquiries about our GRC products. We're here to help you find the perfect solution for your project.
           </p>
         </div>
       </section>
 
-      {/* Contact Information */}
-      <section className="py-16 bg-white">
+      {/* Main Contact Section */}
+      <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
-            {/* Contact Info Cards */}
-            <div className="bg-gray-50 p-8 rounded-lg text-center">
-              <div className="w-16 h-16 bg-brand-red rounded-full flex items-center justify-center mx-auto mb-6">
-                <MapPin className="text-white" size={32} />
-              </div>
-              <h3 className="text-xl font-semibold brand-dark mb-4">Address</h3>
-              <p className="text-gray-600">
-                SP GRC and Handicrafts<br />
-                Rajasthan, India
-              </p>
-            </div>
-
-            <div className="bg-gray-50 p-8 rounded-lg text-center">
-              <div className="w-16 h-16 bg-brand-red rounded-full flex items-center justify-center mx-auto mb-6">
-                <Phone className="text-white" size={32} />
-              </div>
-              <h3 className="text-xl font-semibold brand-dark mb-4">Phone</h3>
-              <p className="text-gray-600">
-                +91 XXXXX XXXXX<br />
-                +91 XXXXX XXXXX
-              </p>
-            </div>
-
-            <div className="bg-gray-50 p-8 rounded-lg text-center">
-              <div className="w-16 h-16 bg-brand-red rounded-full flex items-center justify-center mx-auto mb-6">
-                <Mail className="text-white" size={32} />
-              </div>
-              <h3 className="text-xl font-semibold brand-dark mb-4">Email</h3>
-              <p className="text-gray-600">
-                info@spgrc.com<br />
-                sales@spgrc.com
-              </p>
-            </div>
-          </div>
-
-          {/* Business Hours */}
-          <div className="bg-brand-dark text-white p-8 rounded-lg text-center mb-16">
-            <Clock className="mx-auto mb-4" size={48} />
-            <h3 className="text-2xl font-semibold mb-4">Business Hours</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div>
-                <h4 className="text-lg font-medium mb-2">Monday - Friday</h4>
-                <p className="text-gray-300">9:00 AM - 6:00 PM</p>
-              </div>
-              <div>
-                <h4 className="text-lg font-medium mb-2">Saturday</h4>
-                <p className="text-gray-300">9:00 AM - 4:00 PM</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Form Section */}
-      <section className="py-16 bg-gradient-to-r from-brand-red to-red-600">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <ContactForm />
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             
-            <div className="relative">
-              <div className="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-8">
-                <img
-                  src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=400"
-                  alt="Professional consultant ready to help with GRC solutions"
-                  className="w-full h-64 object-cover rounded-lg mb-6"
-                />
-                
-                <div className="space-y-4">
-                  <div className="flex items-center text-white">
-                    <div className="w-10 h-10 bg-orange-400 rounded-full flex items-center justify-center mr-4">
-                      <Headphones size={16} />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold">24/7 Support</h4>
-                      <p className="text-red-100 text-sm">Always here to help you</p>
-                    </div>
+            {/* Get In Touch Section */}
+            <div className="bg-white rounded-lg shadow-lg p-8">
+              <h2 className="text-2xl font-bold text-brand-red mb-6 border-b border-gray-200 pb-3">
+                Get In Touch
+              </h2>
+              
+              <div className="space-y-6">
+                <div className="flex items-start space-x-4">
+                  <Phone className="text-brand-red mt-1" size={20} />
+                  <div>
+                    <h3 className="font-semibold text-gray-900 mb-1">Phone</h3>
+                    <p className="text-gray-600">+91 98765 43210</p>
+                    <p className="text-gray-600">+91 98765 43211</p>
                   </div>
-                  
-                  <div className="flex items-center text-white">
-                    <div className="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center mr-4">
-                      <Star size={16} />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold">Premium Quality</h4>
-                      <p className="text-red-100 text-sm">Guaranteed excellence</p>
-                    </div>
+                </div>
+
+                <div className="flex items-start space-x-4">
+                  <Mail className="text-brand-red mt-1" size={20} />
+                  <div>
+                    <h3 className="font-semibold text-gray-900 mb-1">Email</h3>
+                    <p className="text-gray-600">info@spgrc.com</p>
+                    <p className="text-gray-600">sales@spgrc.com</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4">
+                  <MapPin className="text-brand-red mt-1" size={20} />
+                  <div>
+                    <h3 className="font-semibold text-gray-900 mb-1">Address</h3>
+                    <p className="text-gray-600">
+                      123 Industrial Area,<br />
+                      Sector 15, Gurgaon,<br />
+                      Haryana - 122001, India
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4">
+                  <Clock className="text-brand-red mt-1" size={20} />
+                  <div>
+                    <h3 className="font-semibold text-gray-900 mb-1">Business Hours</h3>
+                    <p className="text-gray-600">Mon - Sat: 9:00 AM - 6:00 PM</p>
+                    <p className="text-gray-600">Sunday: Closed</p>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* FAQ Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold brand-dark mb-4">Frequently Asked Questions</h2>
-            <p className="text-lg text-gray-600">Common questions about our GRC products and services</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h3 className="text-lg font-semibold brand-dark mb-3">What is GRC?</h3>
-              <p className="text-gray-600">
-                Glass Reinforced Concrete (GRC) is a composite material made of cement, fine aggregates, 
-                and alkali-resistant glass fibers, offering high strength and design flexibility.
-              </p>
+              {/* Quick Contact Buttons */}
+              <div className="mt-8">
+                <h3 className="text-lg font-semibold text-brand-red mb-4">Quick Contact</h3>
+                <div className="space-y-3">
+                  <Button className="w-full bg-blue-600 text-white hover:bg-blue-700">
+                    <Phone className="mr-2" size={16} />
+                    Call Now
+                  </Button>
+                  <Button className="w-full bg-green-600 text-white hover:bg-green-700">
+                    <MessageSquare className="mr-2" size={16} />
+                    WhatsApp
+                  </Button>
+                </div>
+              </div>
             </div>
 
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h3 className="text-lg font-semibold brand-dark mb-3">How long does delivery take?</h3>
-              <p className="text-gray-600">
-                Delivery timeframes vary based on product complexity and quantity. Standard products 
-                typically take 2-4 weeks, while custom designs may require 4-8 weeks.
-              </p>
-            </div>
+            {/* Send us a Message Section */}
+            <div className="bg-white rounded-lg shadow-lg p-8">
+              <h2 className="text-2xl font-bold text-brand-red mb-6 border-b border-gray-200 pb-3">
+                Send us a Message
+              </h2>
+              
+              <form className="space-y-6">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Product/Service of Interest
+                  </label>
+                  <Select>
+                    <SelectTrigger>
+                      <SelectValue placeholder="Select a product category" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="grc-jali">GRC Jali</SelectItem>
+                      <SelectItem value="grc-columns">GRC Columns</SelectItem>
+                      <SelectItem value="grc-domes">GRC Domes</SelectItem>
+                      <SelectItem value="wall-cladding">Wall Cladding</SelectItem>
+                      <SelectItem value="custom">Custom Design</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
 
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h3 className="text-lg font-semibold brand-dark mb-3">Do you provide installation services?</h3>
-              <p className="text-gray-600">
-                Yes, we provide professional installation services with our experienced team to ensure 
-                proper fitting and optimal performance of our GRC products.
-              </p>
-            </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Full Name *
+                    </label>
+                    <Input placeholder="Enter your full name" />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Email Address *
+                    </label>
+                    <Input type="email" placeholder="Enter your email" />
+                  </div>
+                </div>
 
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h3 className="text-lg font-semibold brand-dark mb-3">Can you create custom designs?</h3>
-              <p className="text-gray-600">
-                Absolutely! We specialize in custom GRC products tailored to your specific architectural 
-                requirements and design preferences.
-              </p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Phone Number *
+                    </label>
+                    <Input placeholder="Enter your phone number" />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Country
+                    </label>
+                    <Select>
+                      <SelectTrigger>
+                        <SelectValue placeholder="India" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="india">India</SelectItem>
+                        <SelectItem value="usa">USA</SelectItem>
+                        <SelectItem value="uk">UK</SelectItem>
+                        <SelectItem value="other">Other</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Message *
+                  </label>
+                  <Textarea 
+                    placeholder="Tell us about your project requirements, quantity needed, timeline, etc."
+                    rows={4}
+                  />
+                </div>
+
+                <div className="text-sm text-gray-600">
+                  By submitting this form, you agree to our privacy policy and consent to be contacted regarding your inquiry.
+                </div>
+
+                <Button className="w-full bg-brand-red text-white hover:bg-brand-red-light text-lg py-3">
+                  Send Message
+                </Button>
+              </form>
             </div>
           </div>
         </div>
