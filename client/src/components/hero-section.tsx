@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Link } from "wouter";
 
 export default function HeroSection() {
   return (
@@ -9,7 +10,7 @@ export default function HeroSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="max-w-3xl">
           <h1 className="text-5xl lg:text-6xl font-bold text-white mb-6">
-            SP GRC Products
+            DOON GRC  Products
           </h1>
           <p className="text-xl text-gray-200 mb-8 leading-relaxed">
             Premium architectural solutions with unmatched quality and craftsmanship
@@ -33,12 +34,16 @@ export default function HeroSection() {
 
           {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row gap-4">
+            <Link href="/products/jali-collection">
             <Button className="bg-brand-red text-white px-8 py-3 text-lg font-semibold hover:bg-brand-red-light">
               Explore Collection →
             </Button>
+            </Link>
+            <Link href="/contact">
             <Button variant="outline" className="border-2 border-white text-white px-8 py-3 text-lg font-semibold hover:bg-white hover:text-gray-900">
               Contact Us
             </Button>
+            </Link>
           </div>
         </div>
 

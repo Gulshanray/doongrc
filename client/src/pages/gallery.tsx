@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { Link } from "wouter";
 
 export default function Gallery() {
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
@@ -149,9 +150,11 @@ export default function Gallery() {
           <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
             Let us help you transform your architectural vision into reality with our premium GRC products.
           </p>
-          <Button className="bg-brand-red text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-red-light">
-            Get Free Quote
-          </Button>
+          <Link href="/contact">
+            <Button className="bg-brand-red text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-red-light">
+              Get Free Quote
+            </Button>
+          </Link>
         </div>
       </section>
     </div>

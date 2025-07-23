@@ -11,7 +11,7 @@ import { insertTestimonialSchema, type InsertTestimonial } from "@shared/schema"
 import { Star } from "lucide-react";
 import { useState } from "react";
 
-export default function TestimonialForm() {
+export default function TestimonialForm(p0: { name: string; }) {
   const { toast } = useToast();
   const queryClient = useQueryClient();
   const [rating, setRating] = useState(5);

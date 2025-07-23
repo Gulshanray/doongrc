@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Smile, Building, Users, Headphones, Star } from "lucide-react";
 import type { Product, Testimonial } from "@shared/schema";
+import { Link } from "wouter";
 
 export default function Home() {
   const { data: featuredProducts = [], isLoading: productsLoading } = useQuery<Product[]>({
@@ -100,9 +101,11 @@ export default function Home() {
           </div>
           
           <div className="text-center">
+            <Link href="/products/jali-collection">
             <Button className="bg-brand-red text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-red-light">
               Explore Jali Collection →
             </Button>
+            </Link>
           </div>
         </div>
       </section>
@@ -112,7 +115,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold brand-dark mb-4">
-              Why Choose <span className="brand-red">SP GRC</span>
+              Why Choose <span className="brand-red">DOON GRC</span>
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               Experience excellence through our commitment to quality, innovation, and customer satisfaction
@@ -216,7 +219,7 @@ export default function Home() {
                 ))
               )}
             </div>
-            
+
             <TestimonialForm />
           </div>
         </div>

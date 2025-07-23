@@ -73,7 +73,7 @@ export default function About() {
                   </tr>
                   <tr>
                     <td className="py-4 px-6 text-sm font-medium text-gray-700 bg-gray-50">Name of CEO</td>
-                    <td className="py-4 px-6 text-sm text-gray-900">Mr. Prakash Malviya</td>
+                    <td className="py-4 px-6 text-sm text-gray-900">Mr. Sachin Choudhary</td>
                   </tr>
                   <tr>
                     <td className="py-4 px-6 text-sm font-medium text-gray-700 bg-gray-50">GST No</td>
@@ -186,10 +186,9 @@ export default function About() {
               <h3 className="text-lg font-semibold text-brand-red mb-4 border-b border-gray-200 pb-2">Contact Us</h3>
               <div className="space-y-3">
                 <div>
-                  <h4 className="font-semibold text-gray-900">SP GRC and Handicrafts</h4>
+                  <h4 className="font-semibold text-gray-900"> Doon GRC</h4>
                   <p className="text-sm text-gray-600">
-                    Ward No.17, Opposite Hospital, Iron 
-                    Factory Street, Udaipur, Rajasthan - 313001, India
+                   Selaqi , dehradun ,Uttrakhand
                   </p>
                 </div>
                 <div>

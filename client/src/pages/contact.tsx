@@ -52,9 +52,8 @@ export default function Contact() {
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">Address</h3>
                     <p className="text-gray-600">
-                      123 Industrial Area,<br />
-                      Sector 15, Gurgaon,<br />
-                      Haryana - 122001, India
+                       Industrial Area,<br />
+                      Selaqi, Dehradun, Uttarakhand, India
                     </p>
                   </div>
                 </div>

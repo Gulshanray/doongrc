@@ -52,12 +52,11 @@ export default function ProductDetail() {
     return (
       <div className="min-h-screen bg-gray-50 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Product Not Found</h1>
-          <p className="text-gray-600 mb-8">The product you're looking for doesn't exist.</p>
+         <p> Thank you for your interest in our products.</p>
           <Link href="/products">
             <Button className="bg-brand-red text-white hover:bg-brand-red-light">
               <ArrowLeft className="mr-2" size={16} />
-              Back to Products
+              Click and view All to Products
             </Button>
           </Link>
         </div>
@@ -75,9 +74,7 @@ export default function ProductDetail() {
               <a className="text-gray-500 hover:text-brand-red">Home</a>
             </Link>
             <span className="text-gray-400">/</span>
-            <Link href="/products">
-              <a className="text-gray-500 hover:text-brand-red">Products</a>
-            </Link>
+            
             <span className="text-gray-400">/</span>
             <span className="text-brand-red font-medium">{product.name}</span>
           </div>

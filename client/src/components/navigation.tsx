@@ -26,7 +26,7 @@ export default function Navigation() {
         <div className="flex justify-between items-center h-16">
           <Link href="/">
             <div className="text-2xl font-bold brand-red cursor-pointer">
-              SP GRC
+            DOON GRC 
             </div>
           </Link>
 

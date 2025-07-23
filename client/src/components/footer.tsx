@@ -111,9 +111,9 @@ export default function Footer() {
         <div className="border-t border-red-400 mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-red-100 text-sm mb-4 md:mb-0">
-              All Rights Reserved. © SP GRC And Handicrafts
+              All Rights Reserved. ©  Doon GRC 2023. <br />
               <br />
-              Developed & Managed by WebIndia Pvt. Ltd.
+              Developed & Managed by AirMaxxx Pvt. Ltd.
             </div>
 
             <div className="flex items-center space-x-4">
