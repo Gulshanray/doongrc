@@ -106,7 +106,7 @@ export default function ProductDetail() {
             <div className="space-y-6">
               <div>
                 <h1 className="text-4xl font-bold text-gray-900 mb-4">{product.name}</h1>
-                <div className="flex items-center space-x-4 mb-4">
+                <div className="flex items-center space-x-4 mb-6">
                   <div className="flex items-center space-x-1">
                     {renderStars(product.rating)}
                   </div>
@@ -114,6 +114,55 @@ export default function ProductDetail() {
                   <Badge variant="secondary" className="bg-gray-100 text-gray-700">
                     {product.category}
                   </Badge>
+                </div>
+                
+                {/* Pricing Section */}
+                <div className="bg-gray-50 p-6 rounded-lg mb-6">
+                  <div className="flex items-baseline space-x-2 mb-4">
+                    <span className="text-3xl font-bold text-brand-red">₹ 500.00</span>
+                    <span className="text-gray-600">/ Square Feet</span>
+                  </div>
+                  <p className="text-gray-700 mb-4">
+                    <span className="font-semibold">1000 Square Feet</span> <span className="text-gray-500">(MOQ)</span>
+                  </p>
+                  
+                  <div className="grid grid-cols-2 gap-4 mb-4">
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">Quantity</label>
+                      <input 
+                        type="number" 
+                        placeholder="1000" 
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-brand-red"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">Square Feet</label>
+                      <div className="relative">
+                        <input 
+                          type="number" 
+                          placeholder="1000" 
+                          className="w-full px-3 py-2 pr-16 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-brand-red"
+                        />
+                        <Button className="absolute right-1 top-1 px-3 py-1 text-xs bg-gray-100 text-gray-700 hover:bg-gray-200">
+                          Edit
+                        </Button>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-4">
+                    <Button className="bg-white border-2 border-brand-red text-brand-red hover:bg-brand-red hover:text-white text-sm">
+                      <Phone className="mr-1" size={14} />
+                      Request to Call
+                    </Button>
+                    <Button className="bg-brand-red text-white hover:bg-brand-red-light text-sm">
+                      <Mail className="mr-1" size={14} />
+                      Send Enquiry
+                    </Button>
+                    <Button className="bg-brand-dark text-white hover:bg-gray-800 text-sm">
+                      Get Best Price
+                    </Button>
+                  </div>
                 </div>
               </div>
 
@@ -167,34 +216,60 @@ export default function ProductDetail() {
             </div>
           </div>
 
-          {/* Specifications */}
+          {/* Product Details Table */}
           <div className="bg-white rounded-lg shadow-lg p-8 mb-16">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Product Specifications</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <div className="space-y-2">
-                <h4 className="font-semibold text-gray-900">Material</h4>
-                <p className="text-gray-600">Glass Reinforced Concrete (GRC)</p>
-              </div>
-              <div className="space-y-2">
-                <h4 className="font-semibold text-gray-900">Finish</h4>
-                <p className="text-gray-600">Smooth, Textured, or Custom</p>
-              </div>
-              <div className="space-y-2">
-                <h4 className="font-semibold text-gray-900">Colors</h4>
-                <p className="text-gray-600">White, Natural, Custom Colors</p>
-              </div>
-              <div className="space-y-2">
-                <h4 className="font-semibold text-gray-900">Installation</h4>
-                <p className="text-gray-600">Professional Team Provided</p>
-              </div>
-              <div className="space-y-2">
-                <h4 className="font-semibold text-gray-900">Warranty</h4>
-                <p className="text-gray-600">5 Years Manufacturing Warranty</p>
-              </div>
-              <div className="space-y-2">
-                <h4 className="font-semibold text-gray-900">Delivery</h4>
-                <p className="text-gray-600">2-4 Weeks (Standard)</p>
-              </div>
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">Product Details</h2>
+            <div className="overflow-x-auto">
+              <table className="w-full">
+                <tbody className="divide-y divide-gray-200">
+                  <tr>
+                    <td className="py-4 px-6 text-sm font-medium text-gray-700 bg-gray-50">Business Type</td>
+                    <td className="py-4 px-6 text-sm text-gray-900">Manufacturer, Supplier</td>
+                    <td className="py-4 px-6 text-sm font-medium text-gray-700 bg-gray-50">Application</td>
+                    <td className="py-4 px-6 text-sm text-gray-900">Home, Commercial</td>
+                  </tr>
+                  <tr>
+                    <td className="py-4 px-6 text-sm font-medium text-gray-700 bg-gray-50">Material</td>
+                    <td className="py-4 px-6 text-sm text-gray-900">GRC (Glass Reinforced Concrete)</td>
+                    <td className="py-4 px-6 text-sm font-medium text-gray-700 bg-gray-50">Country of Origin</td>
+                    <td className="py-4 px-6 text-sm text-gray-900">India</td>
+                  </tr>
+                  <tr>
+                    <td className="py-4 px-6 text-sm font-medium text-gray-700 bg-gray-50">Shape</td>
+                    <td className="py-4 px-6 text-sm text-gray-900">
+                      {product.category === "GRC Jali" ? "Rectangular, Round, Custom" : 
+                       product.category === "GRC Column" ? "Cylindrical, Square" : 
+                       "Dome, Curved"}
+                    </td>
+                    <td className="py-4 px-6 text-sm font-medium text-gray-700 bg-gray-50">Form</td>
+                    <td className="py-4 px-6 text-sm text-gray-900">Solid</td>
+                  </tr>
+                  <tr>
+                    <td className="py-4 px-6 text-sm font-medium text-gray-700 bg-gray-50">Color</td>
+                    <td className="py-4 px-6 text-sm text-gray-900">White, Brown, Custom</td>
+                    <td className="py-4 px-6 text-sm font-medium text-gray-700 bg-gray-50">Thickness</td>
+                    <td className="py-4 px-6 text-sm text-gray-900">25 mm (Standard)</td>
+                  </tr>
+                  <tr>
+                    <td className="py-4 px-6 text-sm font-medium text-gray-700 bg-gray-50">Finish</td>
+                    <td className="py-4 px-6 text-sm text-gray-900">Smooth, Textured</td>
+                    <td className="py-4 px-6 text-sm font-medium text-gray-700 bg-gray-50">Installation</td>
+                    <td className="py-4 px-6 text-sm text-gray-900">Professional Service</td>
+                  </tr>
+                  <tr>
+                    <td className="py-4 px-6 text-sm font-medium text-gray-700 bg-gray-50">Warranty</td>
+                    <td className="py-4 px-6 text-sm text-gray-900">5 Years Manufacturing</td>
+                    <td className="py-4 px-6 text-sm font-medium text-gray-700 bg-gray-50">Delivery Time</td>
+                    <td className="py-4 px-6 text-sm text-gray-900">2-4 Weeks</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            
+            <div className="mt-8 text-center">
+              <Button className="bg-brand-red text-white px-8 py-3 hover:bg-brand-red-light">
+                Yes! I am Interested
+              </Button>
             </div>
           </div>
 
@@ -229,20 +304,23 @@ export default function ProductDetail() {
             </div>
           </div>
 
-          {/* Contact Form */}
-          <div className="bg-gradient-to-r from-brand-red to-red-600 rounded-lg p-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-              <div>
-                <h2 className="text-3xl font-bold text-white mb-4">
-                  Interested in {product.name}?
-                </h2>
-                <p className="text-red-100 text-lg">
-                  Get a personalized quote and expert consultation for your project requirements.
-                </p>
-              </div>
-              <div className="bg-white rounded-lg p-6">
-                <ContactForm />
-              </div>
+          {/* Contact Information */}
+          <div className="bg-gradient-to-r from-brand-red to-red-600 rounded-lg p-8 text-center">
+            <h2 className="text-3xl font-bold text-white mb-4">
+              Interested in {product.name}?
+            </h2>
+            <p className="text-red-100 text-lg mb-6">
+              Get a personalized quote and expert consultation for your project requirements.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button className="bg-white text-brand-red px-8 py-3 hover:bg-gray-100">
+                <Phone className="mr-2" size={16} />
+                Call: +91 XXXXX XXXXX
+              </Button>
+              <Button className="bg-brand-dark text-white px-8 py-3 hover:bg-gray-800">
+                <Mail className="mr-2" size={16} />
+                Email: info@spgrc.com
+              </Button>
             </div>
           </div>
         </div>
