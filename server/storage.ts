@@ -75,7 +75,7 @@ export class MemStorage implements IStorage {
         name: "Doon GRC blusters",
         category: "GRC blusters",
         description: "Decorative round blusters patterns with natural lighting effects, perfect for creating elegant architectural screens.",
-        imageUrl: "/public/image/blusters/bluster-2.jpeg",
+        imageUrl: "/image/blusters/bluster-2.jpeg",
         rating: 5,
         featured: true
       },
@@ -83,7 +83,7 @@ export class MemStorage implements IStorage {
         name: "Doon GRC Plant",
         category: "GRC Plants",
         description: "Traditional temple dome architecture with white finish, combining spiritual aesthetics with modern construction techniques.",
-        imageUrl: "/public/image/plant/plant-1.jpeg",
+        imageUrl: "/image/plant/plant-1.jpeg",
         rating: 5,
         featured: true
       }
