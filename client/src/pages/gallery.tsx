@@ -21,7 +21,7 @@ const galleryImages = [
   ...Array.from({ length: 6 }, (_, i) => ({
     id: i + 1,
     category: "columns",
-    src: `/public/image/columns/column-${i + 1}.jpeg`,
+    src: `/image/columns/column-${i + 1}.jpeg`,
     alt: `Column Design ${i + 1}`,
     title: `Column Design ${i + 1}`
   })),
@@ -30,7 +30,7 @@ const galleryImages = [
   ...Array.from({ length: 11 }, (_, i) => ({
     id: i + 100,
     category: "blusters",
-    src: `/public/image/blusters/bluster-${i + 1}.jpeg`,
+    src: `/image/blusters/bluster-${i + 1}.jpeg`,
     alt: `Bluster Design ${i + 1}`,
     title: `Bluster Design ${i + 1}`
   })),
@@ -39,7 +39,7 @@ const galleryImages = [
   ...Array.from({ length: 15 }, (_, i) => ({
     id: i + 200,
     category: "jali",
-    src: `/public/image/jali/jali-${i + 1}.jpeg`,
+    src: `/image/jali/jali-${i + 1}.jpeg`,
     alt: `Jali Design ${i + 1}`,
     title: `Jali Design ${i + 1}`
   })),
@@ -48,7 +48,7 @@ const galleryImages = [
   ...Array.from({ length: 10 }, (_, i) => ({
     id: i + 300,
     category: "cornice",
-    src: `/public/image/cornice/cornice-${i + 1}.jpeg`,
+    src: `/image/cornice/cornice-${i + 1}.jpeg`,
     alt: `Cornice Design ${i + 1}`,
     title: `Cornice Design ${i + 1}`
   })),
@@ -57,7 +57,7 @@ const galleryImages = [
   ...Array.from({ length: 14 }, (_, i) => ({
     id: i + 400,
     category: "plant",
-    src: `/public/image/plant/plant-${i + 1}.jpeg`,
+    src: `/image/plant/plant-${i + 1}.jpeg`,
     alt: `Plant Design ${i + 1}`,
     title: `Plant Design ${i + 1}`
   })),
@@ -66,7 +66,7 @@ const galleryImages = [
   ...Array.from({ length: 6 }, (_, i) => ({
     id: i + 500,
     category: "pillars",
-    src: `/public/image/pillars/pillar-${i + 1}.jpeg`,
+    src: `/image/pillars/pillar-${i + 1}.jpeg`,
     alt: `Pillar Design ${i + 1}`,
     title: `Pillar Design ${i + 1}`
   }))
