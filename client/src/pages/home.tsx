@@ -76,7 +76,7 @@ export default function Home() {
             <CardContent className="p-0">
               <div className="relative h-96">
                 <img
-                  src="/public/image/jali/jali-1.jpeg"
+                  src="/image/jali/jali-1.jpeg"
                   alt="Round GRC Jali"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
@@ -99,7 +99,7 @@ export default function Home() {
             <CardContent className="p-0">
               <div className="relative h-96">
                 <img
-                  src="/public/image/jali/jali-2.jpeg"
+                  src="/image/jali/jali-2.jpeg"
                   alt="Rectangular GRC Jali"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
@@ -122,7 +122,7 @@ export default function Home() {
             <CardContent className="p-0">
               <div className="relative h-96">
                 <img
-                  src="/public/image/jali/jali-3.jpeg"
+                  src="/image/jali/jali-3.jpeg"
                   alt="Custom GRC Jali"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
@@ -281,7 +281,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-red blur-3xl opacity-30 animate-pulse"></div>
           <div className="bg-white/10 border border-white/20 backdrop-blur-lg rounded-xl overflow-hidden shadow-lg p-8">
             <img
-              src="/public/image/quick-enq.png"
+              src="/image/quick-enq.png"
               alt="Contact SP GRC"
               className="w-full h-80 object-cover rounded-2xl shadow-2xl"
             />
