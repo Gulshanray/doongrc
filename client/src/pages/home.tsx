@@ -6,9 +6,10 @@ import TestimonialForm from "@/components/testimonial-form";
 import ContactForm from "@/components/contact-form";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Smile, Building, Users, Headphones, Star } from "lucide-react";
+import { Smile, Building, Users, Headphones, Star, ArrowRight, MessageCircle } from "lucide-react";
 import type { Product, Testimonial } from "@shared/schema";
 import { Link } from "wouter";
+import { Card, CardContent } from "@/components/ui/card";
 
 export default function Home() {
   const { data: featuredProducts = [], isLoading: productsLoading } = useQuery<Product[]>({
@@ -18,6 +19,9 @@ export default function Home() {
   const { data: testimonials = [], isLoading: testimonialsLoading } = useQuery<Testimonial[]>({
     queryKey: ["/api/testimonials"],
   });
+
+
+
 
   return (
     <div>
@@ -50,152 +54,268 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Hanging GRC Jali Collection */}
-      <section className="py-16 bg-gradient-to-r from-brand-dark to-gray-800 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4">
-              Hanging <span className="text-orange-400">GRC Jali Collection</span>
-            </h2>
-            <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-              Experience the elegance of our handcrafted hanging GRC Jali designs that dance with architectural beauty
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            <div className="relative group cursor-pointer">
-              <img
-                src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=400"
-                alt="Round GRC jali with decorative palm element"
-                className="w-full h-64 object-cover rounded-lg transition-transform group-hover:scale-105"
-              />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6 rounded-b-lg">
-                <h3 className="text-xl font-semibold mb-2">Round GRC Jali</h3>
-                <p className="text-gray-300 text-sm">Premium decorative patterns</p>
+{/*  Jali  Section */}
+<section className="py-24 bg-black relative overflow-hidden particles-bg">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    
+    <div className="text-center mb-16 animate-fade-in-up">
+      <h2 className="text-5xl md:text-6xl font-bold text-premium mb-6">
+        Hanging GRC Jali
+      </h2>
+      <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+        Experience the elegance of our handcrafted GRC Jali designs that float with architectural beauty.
+      </p>
+    </div>
+
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
+      
+      {/* Jali 1 */}
+      <div className="relative group animate-fade-in-up" style={{ animationDelay: "0s" }}>
+        <div className="hanging-jali animate-swing" style={{ animationDelay: "0s" }}>
+          <Card className="bg-white/5 border-white/10 backdrop-blur-sm card-3d overflow-hidden shadow-2xl">
+            <CardContent className="p-0">
+              <div className="relative h-96">
+                <img
+                  src="/public/image/jali/jali-1.jpeg"
+                  alt="Round GRC Jali"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-red-900/80 via-transparent to-transparent transition-all duration-500"></div>
+                <div className="absolute bottom-6 left-6 right-6">
+                  <h3 className="text-2xl font-bold text-white mb-1 shimmer-effect">DOON  GRC Jali</h3>
+                  <p className="text-gray-200 text-sm">Premium decorative patterns</p>
+                </div>
               </div>
-            </div>
-            
-            <div className="relative group cursor-pointer">
-              <img
-                src="https://pixabay.com/get/gd2ad6b244881f97b5d09b4288bbf590110c834ee818cb63b3f7b01c815fe80139d3f1414241577f02acc5188208aa3425aa2549e847e8dd9a29e58337f29a117_1280.jpg"
-                alt="Large-scale construction site with rectangular architectural elements"
-                className="w-full h-64 object-cover rounded-lg transition-transform group-hover:scale-105"
-              />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6 rounded-b-lg">
-                <h3 className="text-xl font-semibold mb-2">Rectangular Jali</h3>
-                <p className="text-gray-300 text-sm">Modern geometric designs</p>
-              </div>
-            </div>
-            
-            <div className="relative group cursor-pointer">
-              <img
-                src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=400"
-                alt="Skilled craftsman creating custom jali designs"
-                className="w-full h-64 object-cover rounded-lg transition-transform group-hover:scale-105"
-              />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6 rounded-b-lg">
-                <h3 className="text-xl font-semibold mb-2">Custom Jali</h3>
-                <p className="text-gray-300 text-sm">Bespoke architectural art</p>
-              </div>
-            </div>
-          </div>
-          
-          <div className="text-center">
-            <Link href="/products/jali-collection">
-            <Button className="bg-brand-red text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-red-light">
-              Explore Jali Collection →
-            </Button>
-            </Link>
-          </div>
+            </CardContent>
+          </Card>
         </div>
-      </section>
+        <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-red blur-md animate-glow rounded-full"></div>
+      </div>
+
+      {/* Jali 2 */}
+      <div className="relative group animate-fade-in-up" style={{ animationDelay: "2s" }}>
+        <div className="hanging-jali animate-swing" style={{ animationDelay: "2s" }}>
+          <Card className="bg-white/5 border-white/10 backdrop-blur-sm card-3d overflow-hidden shadow-2xl">
+            <CardContent className="p-0">
+              <div className="relative h-96">
+                <img
+                  src="/public/image/jali/jali-2.jpeg"
+                  alt="Rectangular GRC Jali"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-orange-900/80 via-transparent to-transparent transition-all duration-500"></div>
+                <div className="absolute bottom-6 left-6 right-6">
+                  <h3 className="text-2xl font-bold text-white mb-1 shimmer-effect">DOON GRC Jali</h3>
+                  <p className="text-gray-200 text-sm">Modern geometric designs</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+        <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-gold blur-md animate-glow rounded-full"></div>
+      </div>
+
+      {/* Jali 3 */}
+      <div className="relative group animate-fade-in-up" style={{ animationDelay: "4s" }}>
+        <div className="hanging-jali animate-swing" style={{ animationDelay: "4s" }}>
+          <Card className="bg-white/5 border-white/10 backdrop-blur-sm card-3d overflow-hidden shadow-2xl">
+            <CardContent className="p-0">
+              <div className="relative h-96">
+                <img
+                  src="/public/image/jali/jali-3.jpeg"
+                  alt="Custom GRC Jali"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-red-900/80 via-transparent to-transparent transition-all duration-500"></div>
+                <div className="absolute bottom-6 left-6 right-6">
+                  <h3 className="text-2xl font-bold text-white mb-1 shimmer-effect">DOON GRC Jali</h3>
+                  <p className="text-gray-200 text-sm">Bespoke architectural art</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+        <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-red blur-md animate-glow rounded-full"></div>
+      </div>
+
+    </div>
+
+    <div className="text-center mt-20">
+      <Link href="/products" className="text-lg text-white hover:underline">
+        
+      <Button className="bg-gradient-red hover:scale-105 transform transition-all duration-300 text-lg px-10 py-7 rounded-full shadow-lg shadow-red-500/30 animate-bounce-slow">
+        Explore The Full Collection
+        <ArrowRight className="ml-3 h-6 w-6" />
+      </Button>
+      </Link>
+    </div>
+
+  </div>
+</section>
+
 
       {/* Why Choose SP GRC */}
-      <section id="about" className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold brand-dark mb-4">
-              Why Choose <span className="brand-red">DOON GRC</span>
-            </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Experience excellence through our commitment to quality, innovation, and customer satisfaction
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white p-8 rounded-lg shadow-sm text-center hover:shadow-md transition-shadow">
-              <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Smile className="text-2xl brand-red" size={32} />
-              </div>
-              <h3 className="text-xl font-semibold brand-dark mb-4">Customer Satisfaction</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Customer satisfaction is at the heart of our operations. We strive to understand and exceed the expectations of our clients by offering tailored solutions.
-              </p>
-            </div>
-            
-            <div className="bg-white p-8 rounded-lg shadow-sm text-center hover:shadow-md transition-shadow">
-              <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Building className="text-2xl brand-red" size={32} />
-              </div>
-              <h3 className="text-xl font-semibold brand-dark mb-4">Our Infrastructure</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Our manufacturing unit is equipped with advanced machinery and technology, enabling us to produce a wide range of GRC and GFRC products with unmatched quality.
-              </p>
-            </div>
-            
-            <div className="bg-white p-8 rounded-lg shadow-sm text-center hover:shadow-md transition-shadow">
-              <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Users className="text-2xl brand-red" size={32} />
-              </div>
-              <h3 className="text-xl font-semibold brand-dark mb-4">Our Team</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Our team is driven by a shared commitment to innovation and superior craftsmanship. Mr. Malviya's vision for the company is to not only meet but surpass expectations.
-              </p>
-            </div>
-          </div>
+<section id="about" className="py-16 bg-gray-50">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="text-center mb-12">
+      <h2 className="text-4xl font-bold brand-dark mb-4">
+        Why Choose <span className="brand-red">DOON GRC</span>
+      </h2>
+      <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+        Experience excellence through our commitment to quality, innovation, and customer satisfaction.
+      </p>
+    </div>
+
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      
+      {/* Point 1 */}
+      <div className="bg-white p-8 rounded-lg shadow-sm text-center hover:shadow-md transition-shadow">
+        <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
+          <Smile className="text-2xl brand-red" size={32} />
         </div>
-      </section>
+        <h3 className="text-xl font-semibold brand-dark mb-4">🎨 Complete Design Freedom
+</h3>
+        <p className="text-gray-600 leading-relaxed">
+          From intricate jali patterns to bold modern façades — if you can imagine it, we can make it. GRC allows complete flexibility in design, giving architects and clients full control over shapes, textures, and styles.
+        </p>
+      </div>
+
+      {/* Point 2 */}
+      <div className="bg-white p-8 rounded-lg shadow-sm text-center hover:shadow-md transition-shadow">
+        <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
+          <Building className="text-2xl brand-red" size={32} />
+        </div>
+        <h3 className="text-xl font-semibold brand-dark mb-4">🏭 Local Expertise & Modern Infrastructure</h3>
+        <p className="text-gray-600 leading-relaxed">
+          Our facility in Selakui, Dehradun, is equipped with advanced machines to craft precise GRC products. Local knowledge meets world-class quality.
+        </p>
+      </div>
+
+      {/* Point 3 */}
+      <div className="bg-white p-8 rounded-lg shadow-sm text-center hover:shadow-md transition-shadow">
+        <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
+          <Users className="text-2xl brand-red" size={32} />
+        </div>
+        <h3 className="text-xl font-semibold brand-dark mb-4">🤝 Driven Team, Trusted Leadership</h3>
+        <p className="text-gray-600 leading-relaxed">
+          Led by Mr. Sachin Choudhary, our expert team is committed to delivering quality that exceeds expectations — through innovation, skill, and service.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
 
       {/* Quick Enquiry */}
-      <section id="contact" className="py-16 bg-gradient-to-r from-brand-red to-red-600">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <ContactForm />
-            
+   <section className="py-24 bg-gradient-to-br from-gray-900 via-red-900 to-black relative overflow-hidden">
+  <div className="absolute inset-0 opacity-50">
+    <div className="w-full h-full bg-gradient-to-br from-red-900/10 via-transparent to-black/10"></div>
+  </div>
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div className="animate-slide-in-left">
+        <h2 className="text-5xl md:text-6xl font-bold text-white mb-8">
+          Quick <span className="text-premium">Enquiry</span>
+        </h2>
+        <p className="text-xl text-gray-300 mb-12 leading-relaxed">
+          Transform your architectural dreams into reality. Get in touch with our experts today.
+        </p>
+
+        <form className="space-y-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="relative">
-              <div className="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-8">
-                <img
-                  src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=400"
-                  alt="Professional consultant ready to help with GRC solutions"
-                  className="w-full h-64 object-cover rounded-lg mb-6"
-                />
-                
-                <div className="space-y-4">
-                  <div className="flex items-center text-white">
-                    <div className="w-10 h-10 bg-orange-400 rounded-full flex items-center justify-center mr-4">
-                      <Headphones size={16} />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold">24/7 Support</h4>
-                      <p className="text-red-100 text-sm">Always here to help you</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-center text-white">
-                    <div className="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center mr-4">
-                      <Star size={16} />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold">Premium Quality</h4>
-                      <p className="text-red-100 text-sm">Guaranteed excellence</p>
-                    </div>
-                  </div>
+              <input
+                placeholder="Product / Service Looking For"
+                className="w-full px-4 bg-white/10 border border-white/20 text-white placeholder:text-gray-300 h-14 backdrop-blur-sm rounded"
+              />
+            </div>
+            <div className="relative">
+              <input
+                placeholder="Your Name"
+                className="w-full px-4 bg-white/10 border border-white/20 text-white placeholder:text-gray-300 h-14 backdrop-blur-sm rounded"
+              />
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <input
+              type="email"
+              placeholder="Email"
+              className="w-full px-4 bg-white/10 border border-white/20 text-white placeholder:text-gray-300 h-14 backdrop-blur-sm rounded"
+            />
+            <div className="flex gap-2">
+              <select className="w-28 px-2 bg-white/10 border border-white/20 text-white h-14 rounded backdrop-blur-sm">
+                <option>🇮🇳 +91</option>
+              </select>
+              <input
+                placeholder="Phone / Mobile"
+                className="flex-1 px-4 bg-white/10 border border-white/20 text-white placeholder:text-gray-300 h-14 backdrop-blur-sm rounded"
+              />
+            </div>
+          </div>
+
+          <textarea
+            placeholder="Leave a Message For us"
+            rows={5}
+            className="w-full px-4 py-3 bg-white/10 border border-white/20 text-white placeholder:text-gray-300 backdrop-blur-sm resize-none rounded"
+          />
+
+          <button
+            type="submit"
+            className="bg-gradient-red hover:scale-105 transform transition-all duration-300 text-xl px-12 py-6 rounded-full animate-glow shadow-2xl w-full md:w-auto flex items-center justify-center gap-3"
+          >
+            Send Message
+            <svg className="h-6 w-6 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2v10z" />
+            </svg>
+          </button>
+        </form>
+      </div>
+
+      <div className="relative animate-fade-in-up">
+        <div className="relative">
+          <div className="absolute inset-0 bg-gradient-red blur-3xl opacity-30 animate-pulse"></div>
+          <div className="bg-white/10 border border-white/20 backdrop-blur-lg rounded-xl overflow-hidden shadow-lg p-8">
+            <img
+              src="/public/image/quick-enq.png"
+              alt="Contact SP GRC"
+              className="w-full h-80 object-cover rounded-2xl shadow-2xl"
+            />
+            <div className="mt-8 space-y-6">
+              <div className="flex items-center space-x-4">
+                <div className="w-12 h-12 bg-gradient-red rounded-full flex items-center justify-center animate-glow">
+                  <svg className="h-6 w-6 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2v10z" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="text-white font-semibold">24/7 Support</p>
+                  <p className="text-gray-300 text-sm">Always here to help you</p>
+                </div>
+              </div>
+              <div className="flex items-center space-x-4">
+                <div className="w-12 h-12 bg-gradient-gold rounded-full flex items-center justify-center animate-glow">
+                  <svg className="h-6 w-6 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 17l-4 2 1-4-3-3.2 4-.4L12 8l2 3.4 4 .4-3 3.2 1 4z" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="text-white font-semibold">Premium Quality</p>
+                  <p className="text-gray-300 text-sm">Guaranteed excellence</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>      
+    </div>
+  </div>
+</section>
+
 
       {/* Testimonials */}
       <section className="py-16 bg-white">
@@ -220,7 +340,7 @@ export default function Home() {
               )}
             </div>
 
-            <TestimonialForm />
+            <TestimonialForm name={""} />
           </div>
         </div>
       </section>

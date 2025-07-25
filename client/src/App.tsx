@@ -10,6 +10,7 @@ import Products from "@/pages/products";
 import ProductDetail from "@/pages/product-detail";
 import Gallery from "@/pages/gallery";
 import Contact from "@/pages/contact";
+
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
 
@@ -21,6 +22,7 @@ function Router() {
         <Switch>
           <Route path="/" component={Home} />
           <Route path="/about" component={About} />
+          
           <Route path="/products" component={Products} />
           <Route path="/products/:id" component={ProductDetail} />
           <Route path="/gallery" component={Gallery} />

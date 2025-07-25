@@ -10,7 +10,8 @@ export default function Navigation() {
   const navItems = [
     { path: "/", label: "Home", hash: "#home" },
     { path: "/about", label: "About Us", hash: "#about" },
-    { path: "/products", label: "Products", hash: "#products" },
+    { path: "/products", label: " DOON GRC Products", hash: "#products" },
+    { path: "/project", label: "Project", hash: "#project" },
     { path: "/gallery", label: "Gallery", hash: "#gallery" },
     { path: "/contact", label: "Contact Us", hash: "#contact" },
   ];

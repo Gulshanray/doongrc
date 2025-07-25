@@ -51,9 +51,8 @@ export default function Contact() {
                   <MapPin className="text-brand-red mt-1" size={20} />
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">Address</h3>
-                    <p className="text-gray-600">
-                       Industrial Area,<br />
-                      Selaqi, Dehradun, Uttarakhand, India
+                    <p className="text-gray-600"><br />📍 Corporate Office:
+                       <br />Doon Complex, Main Market Selaqui, Chakrata Road, Dehradun  248011
                     </p>
                   </div>
                 </div>
@@ -102,9 +101,11 @@ export default function Contact() {
                     <SelectContent>
                       <SelectItem value="grc-jali">GRC Jali</SelectItem>
                       <SelectItem value="grc-columns">GRC Columns</SelectItem>
-                      <SelectItem value="grc-domes">GRC Domes</SelectItem>
-                      <SelectItem value="wall-cladding">Wall Cladding</SelectItem>
-                      <SelectItem value="custom">Custom Design</SelectItem>
+                      <SelectItem value="grc-domes">GRC Plant</SelectItem>
+                      <SelectItem value="wall-cladding"> GRC Pillar</SelectItem>
+                      <SelectItem value="custom">GRC Cornice</SelectItem>
+                      <SelectItem value="custom">GRC Bluster</SelectItem>
+
                     </SelectContent>
                   </Select>
                 </div>

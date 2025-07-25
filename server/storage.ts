@@ -56,34 +56,34 @@ export class MemStorage implements IStorage {
     // Seed products
     const seedProducts: InsertProduct[] = [
       {
-        name: "White GRC Column",
+        name: "Doon GRC Column",
         category: "GRC Column",
         description: "Premium white GRC columns with exceptional durability and aesthetic appeal for luxury architectural projects.",
-        imageUrl: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
+        imageUrl: "/image/columns/column-1.jpeg",
         rating: 5,
         featured: true
       },
       {
-        name: "Golden GRC Column",
-        category: "GRC Column", 
-        description: "Elegant golden finish GRC columns designed for premium architectural applications with modern geometric patterns.",
-        imageUrl: "https://pixabay.com/get/g5cd4b726fa1a59ce315fbfe48e695761779d64a225047b602e2f939a8f41229addea43302d998475bbbb36945df0e867041fd0f2dd304418f20dc7b9613de324_1280.jpg",
-        rating: 5,
-        featured: true
-      },
-      {
-        name: "Round GRC Jali",
+        name: "Dooo GRC jali",
         category: "GRC Jali",
-        description: "Decorative round jali patterns with natural lighting effects, perfect for creating elegant architectural screens.",
-        imageUrl: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
+        description: "Elegant golden finish GRC jali designed for premium architectural applications with modern geometric patterns.",
+        imageUrl: "/image/jali/jali-1.jpeg",
         rating: 5,
         featured: true
       },
       {
-        name: "GRC Temple Dome",
-        category: "GRC Domes",
+        name: "Doon GRC blusters",
+        category: "GRC blusters",
+        description: "Decorative round blusters patterns with natural lighting effects, perfect for creating elegant architectural screens.",
+        imageUrl: "/public/image/blusters/bluster-2.jpeg",
+        rating: 5,
+        featured: true
+      },
+      {
+        name: "Doon GRC Plant",
+        category: "GRC Plants",
         description: "Traditional temple dome architecture with white finish, combining spiritual aesthetics with modern construction techniques.",
-        imageUrl: "https://pixabay.com/get/g598f26f58af03f79189e71999d9e43b835a9a90b5f7f12e7f8dfad23aa025f77dd14c6ef4fba503a82445b484f668211e95aad5858b4010431d641e8ff5f926b_1280.jpg",
+        imageUrl: "/public/image/plant/plant-1.jpeg",
         rating: 5,
         featured: true
       }
@@ -111,14 +111,7 @@ export class MemStorage implements IStorage {
         message: "The hanging GRC jali designs transformed our temple architecture. Beautiful work and timely delivery!",
         approved: true
       },
-      {
-        name: "Raj Kumar",
-        profession: "Builder", 
-        location: "Jaipur",
-        rating: 5,
-        message: "Professional service and excellent quality. SP GRC is our trusted partner for all architectural projects.",
-        approved: true
-      }
+ 
     ];
 
     seedTestimonials.forEach(testimonial => {

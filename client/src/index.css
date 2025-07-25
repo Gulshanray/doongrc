@@ -93,3 +93,151 @@
     background-color: var(--brand-dark);
   }
 }
+/* ================================================================== */
+/* === DOON GRC - Premium Hanging Jali Showcase CSS === */
+/* ================================================================== */
+
+/* --- Premium Gold Gradient Text --- */
+.text-premium {
+  background: linear-gradient(145deg, #FFD700, #FDB813, #E6A400);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+/* --- Custom Gradients --- */
+.bg-gradient-red {
+  background-image: linear-gradient(to right, #c31432, #240b36);
+}
+.bg-gradient-gold {
+  background-image: linear-gradient(to right, #fdb813, #e6a400);
+}
+
+
+/* --- Hanging Jali Effect --- */
+.hanging-jali {
+  position: relative;
+  /* Attach the string to the top */
+  padding-top: 40px; 
+}
+
+/* The vertical string */
+.hanging-jali::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 40px; /* Length of the string */
+  background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.4));
+}
+
+/* --- 3D Card Hover Effect --- */
+.card-3d {
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.group:hover .card-3d {
+  transform: perspective(1000px) rotateY(5deg) rotateX(10deg) scale3d(1.05, 1.05, 1.05);
+  box-shadow: 0 40px 60px -20px rgba(0, 0, 0, 0.4);
+}
+
+/* --- Particle/Starry Night Background --- */
+.particles-bg {
+  background-color: #0a0a0a;
+  position: relative;
+  overflow: hidden;
+}
+.particles-bg::before, .particles-bg::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background-image: radial-gradient(circle, #ffffff 1px, transparent 1px);
+  background-size: 2px 150px; /* Creates dashed line effect */
+  animation: animate-particles 25s linear infinite;
+}
+.particles-bg::before {
+  left: 20%;
+}
+.particles-bg::after {
+  left: 60%;
+  animation-delay: -12.5s;
+}
+@keyframes animate-particles {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(100%); }
+}
+
+/* --- KEYFRAME ANIMATIONS --- */
+
+/* Entrance Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-in-up {
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+/* Hanging Swing Animation */
+@keyframes swing {
+  0%, 100% { transform: rotate(2deg); }
+  50% { transform: rotate(-2deg); }
+}
+.animate-swing {
+  animation: swing 8s ease-in-out infinite alternate;
+  transform-origin: top center;
+}
+
+/* Glowing Line Animation */
+@keyframes glow {
+  0%, 100% { opacity: 0.6; box-shadow: 0 0 10px 2px currentColor; }
+  50% { opacity: 1; box-shadow: 0 0 20px 5px currentColor; }
+}
+.animate-glow {
+  animation: glow 3s ease-in-out infinite;
+}
+
+/* Shimmering Text Effect */
+@keyframes shimmer {
+  0% { background-position: -500px 0; }
+  100% { background-position: 500px 0; }
+}
+.shimmer-effect {
+  background: linear-gradient(to right, 
+    rgba(255,255,255,0.7) 40%, 
+    rgba(255,255,255,1) 50%, 
+    rgba(255,255,255,0.7) 60%
+  );
+  background-size: 1000px 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  animation: shimmer 4s infinite linear;
+}
+
+/* Slower Bounce for Button */
+@keyframes bounce-slow {
+  0%, 100% {
+    transform: translateY(-10%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+.animate-bounce-slow {
+  animation: bounce-slow 2.5s infinite;
+}

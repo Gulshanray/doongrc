@@ -74,7 +74,9 @@ export default function ProductDetail() {
               <a className="text-gray-500 hover:text-brand-red">Home</a>
             </Link>
             <span className="text-gray-400">/</span>
-            
+            <Link href="/products">
+              <a className="text-gray-500 hover:text-brand-red">Products</a>
+            </Link>
             <span className="text-gray-400">/</span>
             <span className="text-brand-red font-medium">{product.name}</span>
           </div>

@@ -22,34 +22,75 @@ export default function About() {
             
             {/* Company Description */}
             <div className="bg-white rounded-lg p-6 mb-8 shadow-sm">
-              <p className="text-gray-700 leading-relaxed mb-4">
-                SP GRC and Handicrafts, your premier destination for high-quality Glass Reinforced Concrete (GRC) and Glass Fiber 
-                Reinforced Concrete (GFRC) products. Established in 2022 by Mr. Prakash Malviya, our company is based in the 
-                picturesque city of Udaipur, Rajasthan. We specialize in crafting a diverse range of architectural and decorative elements, 
-                including GRC Jali, GRC Columns, GRC Domes, GRC Wall Cladding, White GRC Temple, White GRC Cornices, GRC Railings, and GRC Planters.
-              </p>
-              
-              <p className="text-gray-700 leading-relaxed mb-4">
-                At SP GRC and Handicrafts, our commitment to quality is unwavering. We adhere to stringent quality control measures at 
-                every stage of production to ensure that our products meet the highest standards. Our quality policy emphasizes the use of 
-                premium raw materials, state-of-the-art technology, and skilled craftsmanship. This meticulous approach guarantees 
-                durability, aesthetic appeal, and long-lasting performance of our offerings.
-              </p>
-              
-              <p className="text-gray-700 leading-relaxed mb-4">
-                Customer satisfaction is at the heart of our operations. We strive to understand and exceed the expectations of our clients 
-                by offering tailored solutions that cater to their specific needs. From the initial consultation to the final installation, we 
-                maintain open communication and provide professional support to ensure a seamless and satisfying experience. Our 
-                dedicated team is always ready to address any queries and deliver products that align with your vision.
-              </p>
-              
-              <p className="text-gray-700 leading-relaxed">
-                Our manufacturing unit is equipped with advanced machinery and technology, enabling us to produce a wide range of GRC 
-                and GFRC products with unmatched precision and efficiency. Under the leadership of Mr. Prakash Malviya, who brings a 
-                wealth of experience and a passion for excellence, our team is committed to maintaining the highest standards, positioning SP 
-                GRC and Handicrafts as a leader in the field.
-              </p>
-            </div>
+           <p className="text-gray-700 leading-relaxed mb-4">
+  DOON GRC is your trusted destination for premium quality Glass Reinforced Concrete (GRC) products. 
+  Founded by Mr. Sachin Choudhary and based in the industrial town of Selaqui, Dehradun, Uttarakhand, 
+  we specialize in crafting a wide range of architectural and decorative GRC elements such as 
+  GRC Jali, GRC Columns, GRC Domes, Wall Cladding, GRC Temples, GRC Cornices, Railings, and Custom Facades.
+</p>
+
+<p className="text-gray-700 leading-relaxed mb-4">
+  At DOON GRC, we are deeply committed to delivering superior quality. Each product undergoes 
+  strict quality checks, combining the finest raw materials with advanced manufacturing technology. 
+  Our experienced craftsmen ensure that every piece meets the highest standards of strength, 
+  durability, and aesthetic appeal — giving your designs the excellence they deserve.
+</p>
+
+<p className="text-gray-700 leading-relaxed mb-4">
+  Customer satisfaction is our top priority. We listen carefully to your design needs and offer 
+  personalized solutions to match your vision. From concept to completion, our team ensures a smooth 
+  process through transparent communication, on-time delivery, and professional after-sales support.
+</p>
+
+<p className="text-gray-700 leading-relaxed">
+  Backed by a fully equipped manufacturing unit in Selaqui, our team led by Mr. Sachin Choudhary continues 
+  to innovate and expand our product offerings. With a passion for excellence and a focus on customer-centric 
+  service, DOON GRC stands tall as a leading manufacturer in the field of GRC in North India.
+</p>
+
+     </div>
+
+
+    
+<div className="bg-gray-50 py-16">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    {/* Section Title and Introduction */}
+    <div className="text-center mb-12">
+      <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Vision & Mission</h2>
+      <p className="text-lg text-gray-600">
+        At DOON GRC, we are committed to excellence in every aspect of our business.
+      </p>
+    </div>
+
+    {/* Vision and Mission Section (As per your image) */}
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+      
+      {/* OUR VISION Column */}
+      <div>
+        <h2 className="text-2xl font-bold uppercase tracking-wider" style={{ color: '#1a3c5a' }}>
+          Our Vision
+        </h2>
+        <div className="mt-3 mb-5 h-1 w-24" style={{ backgroundColor: '#1a3c5a' }}></div>
+        <p className="text-base text-gray-700 leading-loose">
+          To become the most trusted and innovative leader in GRC manufacturing across the region, recognized for our unparalleled quality, design excellence, and our commitment to building a more beautiful architectural future.
+        </p>
+      </div>
+
+      {/* OUR MISSION Column */}
+      <div>
+        <h2 className="text-2xl font-bold uppercase tracking-wider" style={{ color: '#1a3c5a' }}>
+          Our Mission
+        </h2>
+        <div className="mt-3 mb-5 h-1 w-24" style={{ backgroundColor: '#1a3c5a' }}></div>
+        <p className="text-base text-gray-700 leading-loose">
+          To empower our clients by transforming their unique designs into superior GRC products. We achieve this through continuous innovation, ethical business practices, and a deep respect for our customers' vision, ensuring every project is a testament to durability and artistry.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</div>
 
             {/* Company Details Table */}
             <div className="bg-white rounded-lg shadow-sm overflow-hidden">
@@ -91,51 +132,9 @@ export default function About() {
               </table>
             </div>
 
-            {/* Explore Our Range Section */}
-            <div className="mt-12">
-              <div className="flex items-center justify-between mb-6">
-                <h2 className="text-2xl font-bold text-gray-900">Explore Our Range</h2>
-                <Button variant="link" className="text-brand-red hover:text-brand-red-light">
-                  View All →
-                </Button>
-              </div>
-              
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="bg-white rounded-lg shadow-sm overflow-hidden">
-                  <img 
-                    src="https://images.unsplash.com/photo-1558618047-3c8c5d1c9a0e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=200" 
-                    alt="25 mm GRC Jali" 
-                    className="w-full h-48 object-cover"
-                  />
-                  <div className="p-4">
-                    <h3 className="font-semibold text-gray-900 text-center">25 mm GRC Jali</h3>
-                  </div>
-                </div>
-                
-                <div className="bg-white rounded-lg shadow-sm overflow-hidden">
-                  <img 
-                    src="https://images.unsplash.com/photo-1571055107559-3e67626fa8be?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=200" 
-                    alt="GRC Mosque Domes" 
-                    className="w-full h-48 object-cover"
-                  />
-                  <div className="p-4">
-                    <h3 className="font-semibold text-gray-900 text-center">GRC Mosque Domes</h3>
-                  </div>
-                </div>
-                
-                <div className="bg-white rounded-lg shadow-sm overflow-hidden">
-                  <img 
-                    src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=200" 
-                    alt="GRC Wall Cladding" 
-                    className="w-full h-48 object-cover"
-                  />
-                  <div className="p-4">
-                    <h3 className="font-semibold text-gray-900 text-center">GRC Wall Cladding</h3>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          </div>         
+
+
 
           {/* Sidebar */}
           <div className="lg:col-span-1">
@@ -186,14 +185,15 @@ export default function About() {
               <h3 className="text-lg font-semibold text-brand-red mb-4 border-b border-gray-200 pb-2">Contact Us</h3>
               <div className="space-y-3">
                 <div>
-                  <h4 className="font-semibold text-gray-900"> Doon GRC</h4>
+                  <h4 className="font-semibold text-gray-900"> DOON  GRC</h4>
                   <p className="text-sm text-gray-600">
-                   Selaqi , dehradun ,Uttrakhand
+                📍 Corporate Office:
+Doon Complex, Main Market Selaqui, Chakrata Road, Dehradun  248011
                   </p>
                 </div>
                 <div>
-                  <p className="text-sm font-medium text-gray-900">Call Us Now: Member</p>
-                  <p className="text-sm text-gray-600">E-mail: spgrc@gmail.com</p>
+                  <p className="text-sm font-medium text-gray-900">Call Us Now: Rohit (Marketing Head)  9761977739</p>
+                  <p className="text-sm text-gray-600">Email: santosh.shreekrishn1@gmail.com</p>
                 </div>
               </div>
             </div>
